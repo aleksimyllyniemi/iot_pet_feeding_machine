@@ -4,10 +4,10 @@ import paho.mqtt.client as mqtt			# Tuodaan kirjastot​
 def on_connect(client, userdata, flags, rc):		# Yhteyden muodostuessa​
 
     if rc == 0:					# suoritetaan tämä funktio​
-        print("Connect OK")​
+        print("Connect OK")
 
     else:
-        print(f"Connect fail. Error: {rc}")​
+        print(f"Connect fail. Error: {rc}")
 
 client = mqtt.Client() 				# Tehdään client​
 
