@@ -20,6 +20,13 @@ def fullRev(): #360 degree rotation
         pyori(a,b)
         pyori(b,c)
         pyori(c,d)
+    pinOff()
+
+def pinOff():
+    a.off()
+    b.off()
+    c.off()
+    d.off()
 
 
 if __name__=="__main__":
