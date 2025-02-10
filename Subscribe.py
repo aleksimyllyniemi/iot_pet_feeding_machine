@@ -1,4 +1,5 @@
 import paho.mqtt.client as mqtt			# Tuodaan kirjastot​
+from stepperi import fullRev
 
 def on_connect(client, userdata, flags, rc):		# Yhteyden muodostuessa suoritetaan tämä funktio​
 
