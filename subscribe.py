@@ -1,5 +1,5 @@
 import paho.mqtt.client as mqtt			# Tuodaan kirjastot​
-#from stepperi import fullRev
+from stepperi import fullRev
 
 def on_connect(client, userdata, flags, rc):		# Yhteyden muodostuessa suoritetaan tämä funktio​
 
@@ -19,8 +19,8 @@ def on_message(client, userdata, msg):		# Viestin saapuessa suoritetaan tämä f
     print(f"{msg.topic} {msg.payload}")		#   Tulostetaan viesti
     message=msg.payload.decode()
     print(message)
-    #if message[:3] == "cfg":
-    #    fullRev()
+    if message[:3] == "cfg":
+        fullRev()
 
 client = mqtt.Client()				# Luodaan client
 
