@@ -21,4 +21,6 @@ def fullRev(): #360 degree rotation
         pyori(b,c)
         pyori(c,d)
 
-fullRev()
+
+if __name__=="__main__":
+    fullRev()
