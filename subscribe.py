@@ -1,6 +1,6 @@
 import paho.mqtt.client as mqtt			# Tuodaan kirjastot​
 from stepperi import fullRev
-import threading
+#import threading
 
 def on_connect(client, userdata, flags, rc):		# Yhteyden muodostuessa suoritetaan tämä funktio​
 
@@ -22,13 +22,13 @@ def on_message(client, userdata, msg):		# Viestin saapuessa suoritetaan tämä f
     print(message)
     if message[:3] == "cfg":
         fullRev()
-        
-def hello():
-    print("abc")
 
-t = threading.Timer(10, hello())
+#def hello():
+#    print("abc")
 
-t.start()
+#t = threading.Timer(10, hello())
+
+#t.start()
 
 
 client = mqtt.Client()				# Luodaan client
