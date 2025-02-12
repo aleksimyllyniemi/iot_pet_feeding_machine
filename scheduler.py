@@ -4,9 +4,6 @@ import re
 
 
 badinput="Enter time in (HH:MM) format!"
-currTime=str(datetime.datetime.now())[11:19]
-
-print(currTime)
 
 
 def setTimes(h1=None,h2=None):
@@ -17,6 +14,6 @@ def setTimes(h1=None,h2=None):
         #config
     else:
         return badinput
-    
+
 if __name__=="__main__":
     print(setTimes("10:30", "22:30"))
