@@ -1,16 +1,15 @@
 import paho.mqtt.client as mqtt			# Tuodaan kirjastot​
-from stepperi import fullRev
+#from stepperi import fullRev
 import multiprocessing
 import scheduler
 import time #temp
+import datetime
+
 
 def on_connect(client, userdata, flags, rc):		# Yhteyden muodostuessa suoritetaan tämä funktio​
 
     print(f"Connected {rc}")			#   Tulostetaan Connect ja palautuskoodi​
     client.subscribe("tite24")		#   Tilataan clientille rasp/topic aihe​
-
-
-
 
 
 def on_message(client, userdata, msg):		# Viestin saapuessa suoritetaan tämä funktio​
@@ -19,17 +18,27 @@ def on_message(client, userdata, msg):		# Viestin saapuessa suoritetaan tämä f
     msgtype=message[:3]
     if msgtype == "cfg":
         #etä konfigurointi
-        #scheduler.setTimes()
+        #times=scheduler.setTimes()
+        #if type(times)==Str:
+
         pass
     elif msgtype == "spn":
-        fullRev()
+        #fullRev()
+        pass
+        
+        
 
 def counter(): #multiprocessing testausta
     counter=1
     while True:
-        counter+=1
-        print(counter)
-        time.sleep(1)
+        currtime=str(datetime.datetime.now())[11:19]
+        #nextfeed=???             #Displayed on the lcd
+        print(currtime)
+        time.sleep(10)
+        print(type(currtime))
+        #if currtime==feedtime
+        #   fullrev()
+        #   lastfeed=currtime     #Displayed on the lcd
 
 
 def mqttc():
