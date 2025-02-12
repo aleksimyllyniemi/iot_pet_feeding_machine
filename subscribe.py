@@ -8,7 +8,7 @@ import re
 import os
 
 
-t1="15:09"
+t1="15:10"
 t2="22:30"
 
 
@@ -39,7 +39,7 @@ def counter(t1, t2): #multiprocessing testausta
         currtime=str(datetime.datetime.now())[11:16]
         if currtime == t1 or currtime == t2:
             #fullRev()
-            print("AAAAAAAAAAAA")
+            print("pyörii")
         
         print(currtime)
         time.sleep(60)
@@ -60,7 +60,7 @@ def on_message(client, userdata, msg):		# Viestin saapuessa suoritetaan tämä f
         print(times)
         #p2.kill()
         time.sleep(1)
-        print("asddddddddddddddddddddddddddddddddddddddd")
+        print("cfg viesti")
         #p2.start()
         #if type(times)==Str:
 
