@@ -1,6 +1,5 @@
 import paho.mqtt.client as mqtt			# Tuodaan kirjastot​
 #from stepperi import fullRev
-import multiprocessing
 import time
 import datetime
 
