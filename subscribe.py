@@ -1,9 +1,12 @@
 import paho.mqtt.client as mqtt			# Tuodaan kirjastot​
-#from stepperi import fullRev
+from stepperi import fullRev
 import time
 import datetime
+from grove.display.jhd1802 import JHD1802
+#from gpiozero import Buzzer
 
-
+lcd = JHD1802()
+#buzzer = Buzzer(16)
 
 def on_connect(client, userdata, flags, rc):		# Yhteyden muodostuessa suoritetaan tämä funktio​
     print(f"Connected {rc}")			#   Tulostetaan Connect ja palautuskoodi​
@@ -12,7 +15,15 @@ def on_connect(client, userdata, flags, rc):		# Yhteyden muodostuessa suoritetaa
 def setTime():
     lastFed=str(datetime.datetime.now())[11:16]
     print(lastFed)
-    #lcd ("Last fed HH:MM")
+    lcd.clear()
+    lcd.setCursor(0,0)
+    lcd.write(f"Viim. ruokittu")
+    lcd.setCursor(1,0)
+    lcd.write(f"Klo {lastFed}")
+    """buzzer.on()
+    time.sleep(1)
+    buzzer.off()"""
+
 
 
 
@@ -21,9 +32,9 @@ def on_message(client, userdata, msg):		# Viestin saapuessa suoritetaan tämä f
     print(message)
     msgtype=message[:3]
     if msgtype == "spn":
-        #fullRev()
+        fullRev()
         setTime()
-        pass
+        #beep()
         
 
 
