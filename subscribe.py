@@ -29,10 +29,15 @@ def setTime():
 
 def on_message(client, userdata, msg):		# Viestin saapuessa suoritetaan tämä funktio​
     message=msg.payload.decode()
-    print(message)
     msgtype=message[:3]
     if msgtype == "spn":
         fullRev()
+        setTime()
+        #beep()
+        
+    elif msgtype == "spd":
+        for i in range(3):
+            fullRev()
         setTime()
         #beep()
         
