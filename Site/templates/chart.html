@@ -3,9 +3,9 @@
 <head >
     <title>Mittauskaavio</title>
      
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> <!-- Toimii ainoastaan Azuressa!-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.2/mqttws31.min.js" type="text/javascript"></script>
-    <script src="{{ url_for('static', filename='skripti.js') }}" type="text/javascript"></script> <!-- Toimii ainoastaan Azuressa!-->
+    <script src="{{ url_for('static', filename='skripti.js') }}" type="text/javascript"></script>
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
@@ -28,7 +28,7 @@
 
     <script type="text/javascript">
 
-        var socket = io.connect('tite24-mittaukset-ek-ahdefafzdtcsaqhh.northeurope-01.azurewebsites.net');
+        var socket = io.connect('http://127.0.0.1:5000');
         socket.on('data_update', function () {
             window.location.reload();
         });

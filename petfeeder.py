@@ -44,14 +44,14 @@ def on_message(client, userdata, msg):		# Viestin saapuessa suoritetaan tämä f
         sendmsg(f"Ruokittu {now} {amt}g")
         lähetys = {"mittaus" : (now, amt)}
         viesti = json.dumps(lähetys)
-        requests.post("https://tite24-mittaukset-ek-ahdefafzdtcsaqhh.northeurope-01.azurewebsites.net/lisaa_tieto", data=viesti)
+        requests.post("http://127.0.0.1:5000/lisaa_tieto", data=viesti)
     elif msgtype == "spd":
         for i in range(3):
             fullRev()
         sendmsg(f"Ruokittu {now} {amt*3}g")
         lähetys = {"mittaus" : (now, amt*3)}
         viesti = json.dumps(lähetys)
-        requests.post("https://tite24-mittaukset-ek-ahdefafzdtcsaqhh.northeurope-01.azurewebsites.net/lisaa_tieto", data=viesti)
+        requests.post("http://127.0.0.1:5000/lisaa_tieto", data=viesti)
     elif message=="Väärä syöte" or message[0:8]=="Ruokittu":
         pass
     else:
